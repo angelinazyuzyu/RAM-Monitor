@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="13dp"
+    app:cardElevation="1dp"
+    app:strokeColor="#E7EAF0"
+    app:strokeWidth="1dp">
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:gravity="center_vertical"
+     android:padding="13dp">
+
+  <ImageView
+      android:id="@+id/tvAppIcon"
+      android:layout_width="46dp"
+      android:layout_height="46dp"
+      android:scaleType="fitCenter"
+      android:contentDescription="Иконка приложения"
+      android:background="#EAF0FA" />
+
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical"
+      android:layout_marginStart="12dp">
+
+   <TextView
+       android:id="@+id/tvAppLabel"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Application"
+       android:textColor="#17243A"
+       android:textSize="15sp"
+       android:textStyle="bold"
+       android:maxLines="1"
+       android:ellipsize="end" />
+
+   <TextView
+       android:id="@+id/tvPackageName"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="3dp"
+       android:text="com.example.application"
+       android:textColor="#64748B"
+       android:textSize="11sp"
+       android:maxLines="1"
+       android:ellipsize="end" />
+
+   <TextView
+       android:id="@+id/tvAppVersion"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="3dp"
+       android:text="Версия: 1.0"
+       android:textColor="#94A3B8"
+       android:textSize="10sp" />
+
+  </LinearLayout>
+
+  <TextView
+      android:id="@+id/tvAppType"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Системное"
+      android:textColor="#64748B"
+      android:textSize="10sp" />
+
+ </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

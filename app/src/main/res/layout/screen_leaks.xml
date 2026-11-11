@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="18dp">
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Подозрения на утечки" android:textColor="#17243A" android:textSize="24sp" android:textStyle="bold" />
+ <TextView android:id="@+id/tvLeakIntro" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Здесь отображаются результаты анализа временных рядов памяти." android:textColor="#64748B" android:textSize="13sp" />
+ <TextView
+     android:id="@+id/tvLeakEmpty"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="12dp"
+     android:gravity="center"
+     android:text="Подозрений пока нет. Продолжайте мониторинг — результаты анализа появятся здесь."
+     android:textColor="#64748B"
+     android:textSize="14sp" />
+ <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+  <LinearLayout android:id="@+id/leaksContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+ </ScrollView>
+</LinearLayout>

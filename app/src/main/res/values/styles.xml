@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.RAMMonitor" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#2457A7</item>
+        <item name="colorSecondary">#39866D</item>
+    </style>
+</resources>

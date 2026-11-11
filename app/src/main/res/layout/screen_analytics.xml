@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:padding="18dp">
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Аналитика памяти"
+      android:textColor="#17243A"
+      android:textSize="24sp"
+      android:textStyle="bold" />
+
+  <com.google.android.material.button.MaterialButtonToggleGroup
+      android:id="@+id/periodToggle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      app:singleSelection="true"
+      app:selectionRequired="true">
+
+   <Button
+       android:id="@+id/periodDay"
+       style="@style/Widget.Material3.Button.OutlinedButton"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="24 часа" />
+
+   <Button
+       android:id="@+id/periodWeek"
+       style="@style/Widget.Material3.Button.OutlinedButton"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="7 дней" />
+
+   <Button
+       android:id="@+id/periodMonth"
+       style="@style/Widget.Material3.Button.OutlinedButton"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="30 дней" />
+
+  </com.google.android.material.button.MaterialButtonToggleGroup>
+
+  <!-- Общая оперативная память устройства -->
+  <com.google.android.material.card.MaterialCardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="14dp"
+      app:cardCornerRadius="16dp">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:padding="14dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Использование RAM устройства"
+        android:textColor="#17243A"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <com.example.rammonitor.ui.MemoryChartView
+        android:id="@+id/memoryChart"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvChartHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Недостаточно измерений для графика"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+   </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+  <!-- PSS и RSS -->
+  <com.google.android.material.card.MaterialCardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="14dp"
+      app:cardCornerRadius="16dp">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:padding="14dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Память процесса RAM Monitor"
+        android:textColor="#17243A"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <com.example.rammonitor.ui.ProcessMemoryChartView
+        android:id="@+id/processMemoryChart"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvProcessChartHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PSS и RSS"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvProcessSelected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="#F1F5F9"
+        android:text="Коснитесь графика, чтобы посмотреть значения"
+        android:textColor="#334155"
+        android:textSize="13sp" />
+
+   </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+  <!-- Java, Native, Graphics -->
+  <com.google.android.material.card.MaterialCardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="14dp"
+      app:cardCornerRadius="16dp">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:padding="14dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Структура памяти процесса"
+        android:textColor="#17243A"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <com.example.rammonitor.ui.ProcessMemoryChartView
+        android:id="@+id/processBreakdownChart"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvBreakdownChartHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Java Heap, Native Heap и Graphics"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvBreakdownSelected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="#F1F5F9"
+        android:text="Коснитесь графика, чтобы посмотреть значения"
+        android:textColor="#334155"
+        android:textSize="13sp" />
+
+   </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="18dp"
+      android:text="Сводка"
+      android:textColor="#17243A"
+      android:textSize="18sp"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/tvAnalyticsSummary"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:textColor="#526176"
+      android:textSize="14sp"
+      android:text="Загрузка…" />
+
+ </LinearLayout>
+</ScrollView>
